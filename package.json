@@ -26,6 +26,7 @@
     "redux": "^4.0.0",
     "redux-multi": "^0.1.12",
     "redux-thunk": "^2.3.0",
+    "uuid": "^3.3.2",
     "whatwg-fetch": "^3.0.0"
   },
   "devDependencies": {

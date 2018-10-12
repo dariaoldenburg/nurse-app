@@ -6,7 +6,7 @@ import { TodoElement } from '../todo.element';
 
 
 const _TodoList = ({ todos }) => (
-  <div>
+  <div className="todo-list">
     {
       todos.map((todo) => (
         <TodoElement key={todo.id} todo={todo} />

@@ -21,7 +21,7 @@ const _TodoForm = ({ addTodo }) => {
           <Field name="patientName" validate={required}>
             {({ input, meta }) => (
               <div>
-                <input type="text" {...input} placeholder="Name" />
+                <input type="text" {...input} placeholder="Name" className="input" />
                 {meta.touched && meta.error && <div>{meta.error}</div>}
               </div>
             )}
@@ -29,13 +29,13 @@ const _TodoForm = ({ addTodo }) => {
           <Field name="task" validate={required}>
             {({ input, meta }) => (
               <div>
-                <input type="text" {...input} placeholder="Task" />
+                <input type="text" {...input} placeholder="Task" className="input"/>
                 {meta.touched && meta.error && <div>{meta.error}</div>}
               </div>
             )}
           </Field>
-          <button type="submit" disabled={submitting || pristine || invalid}>
-            +
+          <button type="submit" disabled={submitting || pristine || invalid} className="submit">
+            <i className="fas fa-plus" />
           </button>
         </form>
       )}

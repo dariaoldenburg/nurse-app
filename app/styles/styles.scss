@@ -20,3 +20,8 @@ body {
     padding: 25px 15px;
   }
 }
+
+@import "header";
+@import "todo.element";
+@import "todo.form";
+@import "todo.list";

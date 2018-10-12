@@ -1,8 +1,11 @@
 import React from 'react';
-import { object } from 'prop-types';
+import { object, func } from 'prop-types';
+import { connect } from 'react-redux';
+
+import { todosSetChecked } from '../../store/todos';
 
 
-const TodoElement = ({ todo }) => {
+const _TodoElement = ({ todo, setChecked }) => {
   const { id, patientName, task, isChecked, date, time } = todo;
 
   return (
@@ -13,14 +16,27 @@ const TodoElement = ({ todo }) => {
           <div>{patientName}</div>
           <div>{task}</div>
         </div>
-        <div>{isChecked}</div>
+        {
+          !isChecked ? (
+            <button onClick={ () => setChecked(id) }>Done!</button>
+          ) : (
+            <i className="fas fa-check" />
+          )
+        }
       </div>
     </div>
   );
 };
 
-TodoElement.propTypes = {
+_TodoElement.propTypes = {
   todo: object.isRequired,
+  setChecked: func.isRequired,
 };
+
+const mapDispatchToProps = (dispatch) => ({
+  setChecked: (id) => dispatch(todosSetChecked(id)),
+});
+
+const TodoElement = connect(null, mapDispatchToProps)(_TodoElement);
 
 export { TodoElement };

@@ -20,7 +20,7 @@ const _TodoElement = ({ todo, setChecked }) => {
           !isChecked ? (
             <button className="todo__button" onClick={ () => setChecked(id) }>Done!</button>
           ) : (
-            <i className="fas fa-check" />
+            <i className="fas fa-check todo__check" />
           )
         }
       </div>

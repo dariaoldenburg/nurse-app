@@ -28,9 +28,8 @@ const todosReducer = (state = initalState, action = { type: '', payload: [] }) =
 
     case TODOS_SET_CHECKED: {
       const { id } = action.payload;
-      const { todos } = state;
 
-      return todos.map((todo) => todo.id !== id ? todo : { ...todo, isChecked: true });
+      return state.map((todo) => todo.id !== id ? todo : { ...todo, isChecked: true });
     }
 
     default: {

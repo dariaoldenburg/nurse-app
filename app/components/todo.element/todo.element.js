@@ -9,16 +9,16 @@ const _TodoElement = ({ todo, setChecked }) => {
   const { id, patientName, task, isChecked, date, time } = todo;
 
   return (
-    <div id={id}>
-      <div>{date}{time}</div>
-      <div>
-        <div>
-          <div>{patientName}</div>
-          <div>{task}</div>
+    <div className="todo">
+      <div className="todo__timestamp"><span>{date}</span><span>{time}</span></div>
+      <div className="todo__content">
+        <div className="todo-description">
+          <div className="todo-description__name">{patientName}</div>
+          <div className="todo-description__task">{task}</div>
         </div>
         {
           !isChecked ? (
-            <button onClick={ () => setChecked(id) }>Done!</button>
+            <button className="todo__button" onClick={ () => setChecked(id) }>Done!</button>
           ) : (
             <i className="fas fa-check" />
           )

@@ -1,4 +1,5 @@
 import uuid from 'uuid/v4';
+import moment from 'moment';
 
 import {
   TODOS_ADD_ITEM,
@@ -14,10 +15,13 @@ const todosReducer = (state = initalState, action = { type: '', payload: [] }) =
       const { todo } = action.payload;
 
       return [
-        ...state.todos,
+        ...state,
         {
           ...todo,
           id: uuid(),
+          date: moment().format('YYYY-MM-DD'),
+          time: moment().format('HH:mm:ss'),
+          isChecked: false,
         },
       ];
     }

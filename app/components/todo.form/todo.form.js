@@ -17,10 +17,10 @@ const _TodoForm = ({ addTodo }) => {
     <Form
       onSubmit={onSubmit}
       render={({ handleSubmit, submitting, pristine, invalid }) => (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="form">
           <Field name="patientName" validate={required}>
             {({ input, meta }) => (
-              <div>
+              <div className="form__input">
                 <input type="text" {...input} placeholder="Name" className="input" />
                 {meta.touched && meta.error && <div>{meta.error}</div>}
               </div>
@@ -28,7 +28,7 @@ const _TodoForm = ({ addTodo }) => {
           </Field>
           <Field name="task" validate={required}>
             {({ input, meta }) => (
-              <div>
+              <div className="form__input">
                 <input type="text" {...input} placeholder="Task" className="input"/>
                 {meta.touched && meta.error && <div>{meta.error}</div>}
               </div>

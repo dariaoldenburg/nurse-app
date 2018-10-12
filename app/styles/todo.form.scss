@@ -1,9 +1,22 @@
+.form {
+  display: flex;
+  justify-content: space-between;
+  max-width: 500px;
+  margin: auto;
+
+  .form__input {
+    flex-grow: 1;
+  }
+}
+
 .input {
   font-size: 12px;
   height: 39px;
   border: 1px solid $gray-light;
   border-radius: 2px;
   padding-left: 12px;
+  flex-grow: 1;
+  width: calc(95% - 15px);
 }
 
 .submit {
@@ -14,5 +27,6 @@
   color: $white;
   font-size: 12px;
   height: 39px;
+  min-width: 39px;
   width: 39px;
 }

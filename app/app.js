@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 
@@ -13,11 +13,13 @@ import { store } from './store';
 ReactDOM.render(
   <div className="app">
     <Provider store={ store }>
-      <div>
+      <Fragment>
         <Header />
-        <TodoForm />
-        <TodoList />
-      </div>
+        <div className="app__container">
+          <TodoForm />
+          <TodoList />
+        </div>
+      </Fragment>
     </Provider>
   </div>,
   document.getElementById('react-app')
